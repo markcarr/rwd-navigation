@@ -36,11 +36,6 @@
 				opacity: .4;
 			}
 		}
-
-		~ .overlay {
-			background: rgba(0,0,0,.2);
-			left: auto;
-		}
 	}
 }
 
@@ -128,6 +123,24 @@ nav.main {
 }
 
 @media (min-width: 992px) {
+	body.no-scroll {
+		overflow: auto;
+	}
+
+	#expand {
+		&:checked {
+			~ .wrapper {
+				-webkit-transform: translate(0, 0);
+				-moz-transform: translate(0, 0);
+				transform: translate(0, 0);
+
+				.inner-wrapper {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
 	.wrapper {
 		-webkit-transition: none;
 		-moz-transition: none;

@@ -25,7 +25,6 @@ var App = {};
 		initialise: function(){
 			this.setElements();
 			this.setEvents();
-			this.resize();
 		},
 
 		setElements: function(){
@@ -38,24 +37,12 @@ var App = {};
 			var self = this;
 
 			this.$clickOut.on('click', function(){
-				self.reset();
+				self.$expand.attr('checked', false);
+				$(document.body).removeClass('no-scroll');
 			});
 
 			this.$button.on('click', function(){
 				$(document.body).toggleClass('no-scroll');
-			});
-		},
-
-		reset: function(){
-			this.$expand.attr('checked', false);
-			$(document.body).removeClass('no-scroll');
-		},
-
-		resize: function(){
-			var self = this;
-
-			$(window).on('resize', function(){
-				self.reset();
 			});
 		}
 	};
