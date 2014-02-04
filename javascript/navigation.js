@@ -28,7 +28,7 @@ var App = {};
 		},
 
 		setElements: function(){
-			this.$button = this.element.find('label');
+			this.$button = this.element.find('label[for=expand]');
 			this.$expand = this.element.prev('#expand');
 			this.$clickOut = this.element.nextAll('.mast, .wrapper');
 		},
